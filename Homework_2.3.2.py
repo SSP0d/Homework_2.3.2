@@ -1,26 +1,27 @@
 def factorize(*number):
     
-    n=0
+    el=0
     count = 1
-    el = []
+    val = []
     result = []
     
     while True:
 
-        arg = number[n]
+        arg = number[el]
         num = arg%count
         
             
         if num == 0:
-            el.append(count)
+            val.append(count)
             count += 1
         else:
             count += 1
             
-        if count == arg:
-            n += 1
+        if count > arg:
+            el += 1
             count = 1
-            result.append(el)
+            result.append(val)
+            val = []
 
         return result
 
