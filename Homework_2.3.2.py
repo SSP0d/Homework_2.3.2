@@ -1,9 +1,32 @@
 def factorize(*number):
-    # YOUR CODE HERE
-    raise NotImplementedError() # Remove after implementation
+    
+    n=0
+    count = 1
+    el = []
+    result = []
+    
+    while True:
+
+        arg = number[n]
+        num = arg%count
+        
+            
+        if num == 0:
+            el.append(count)
+            count += 1
+        else:
+            count += 1
+            
+        if count == arg:
+            n += 1
+            count = 1
+            result.append(el)
+
+        return result
 
 
-a, b, c, d  = factorize(128, 255, 99999, 10651060)
+a, b, c, d = factorize(2, 4, 8, 16)
+# a, b, c, d  = factorize(128, 255, 99999, 10651060)
 
 assert a == [1, 2, 4, 8, 16, 32, 64, 128]
 assert b == [1, 3, 5, 15, 17, 51, 85, 255]
